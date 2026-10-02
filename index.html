@@ -1,3 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>415 Dog Walker | San Francisco Dog Walking & Pet Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.min.css">
+<style>
+:root{--mew-blue:#6B7B8C;--mew-blue-dark:#4A5568;--mint-green:#98FF98;--mint-dark:#52B788;--cream:#FDF8F3;--white:#FFFFFF;--dark:#1a1a1a;--gray:#666;--bg-color:var(--cream);--text-color:var(--dark);--card-bg:var(--white)}
+[data-theme="dark"]{--cream:#121212;--white:#2d2d2d;--dark:#FDF8F3;--gray:#aaa;--bg-color:#121212;--text-color:#FDF8F3;--card-bg:#2d2d2d}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;line-height:1.7;color:var(--text-color);background:var(--bg-color);transition:background .3s,color .3s}
+header{position:fixed;top:0;width:100%;background:rgba(253,248,243,.95);padding:1rem 2rem;z-index:1000;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;color:var(--dark)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{color:var(--dark);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--mint-dark)}
+.book-now-btn{background:var(--mint-green);color:var(--dark);padding:.6rem 1.4rem;border-radius:24px;text-decoration:none;font-weight:600;transition:all .2s}
+.book-now-btn:hover{background:var(--mint-dark);transform:translateY(-1px)}
+.hero{min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;background:linear-gradient(180deg,var(--cream) 0%,var(--white) 100%)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;margin-bottom:1.5rem;color:var(--dark);max-width:800px}
+.hero p{font-size:1.15rem;color:var(--gray);max-width:620px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:900px;margin:4rem auto;padding:0 2rem;text-align:center}
+.stat-number{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--mint-dark);line-height:1}
+.stat-label{color:var(--gray);margin-top:.5rem;font-size:.95rem}
+section{padding:5rem 2rem}
+.section-label{text-transform:uppercase;letter-spacing:.18em;font-size:.85rem;color:var(--mint-dark);font-weight:600;text-align:center;margin-bottom:.5rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:700;text-align:center;margin-bottom:1rem;color:var(--dark)}
+.section-subtitle{text-align:center;color:var(--gray);max-width:620px;margin:0 auto 3rem;font-size:1.05rem}
+.services{background:var(--white)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.service-item{background:var(--card-bg);padding:2rem;border-radius:16px;text-align:center;border:1px solid rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}
+.service-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
+.service-emoji{font-size:2.4rem;margin-bottom:.5rem}
+.service-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem;margin-bottom:.5rem}
+.service-price{color:var(--mint-dark);font-weight:700;font-size:1.4rem;margin-bottom:.5rem}
+.service-unit{font-size:.85rem;color:var(--gray);font-weight:400}
+.service-desc{color:var(--gray);font-size:.95rem}
+.pricing{background:var(--bg-color)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.pricing-card{background:var(--card-bg);padding:2rem;border-radius:16px;border:1px solid rgba(0,0,0,.04)}
+.pricing-tag{text-transform:uppercase;font-size:.75rem;letter-spacing:.1em;color:var(--mint-dark);font-weight:600;margin-bottom:.5rem}
+.pricing-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem;margin-bottom:.25rem}
+.pricing-amount{font-size:1.6rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.pricing-duration{color:var(--gray);font-size:.9rem;margin-bottom:1rem}
+.pricing-note{color:var(--gray);font-size:.95rem}
+.about{background:var(--white)}
+.about-content{max-width:720px;margin:0 auto;text-align:center;font-size:1.05rem;color:var(--gray)}
+.about-content p+p{margin-top:1rem}
+.about-photo{width:100%;max-width:520px;border-radius:16px;margin:2rem auto;display:block;box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.gallery-section{background:var(--bg-color)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1200px;margin:0 auto}
+.gallery-grid>a{display:block;aspect-ratio:1/1;overflow:hidden;border-radius:14px;position:relative;background:var(--white)}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.gallery-grid>a:hover img{transform:scale(1.05)}
+@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gallery-grid{grid-template-columns:1fr}}
+.contact{background:var(--white);text-align:center}
+.contact-card{max-width:560px;margin:0 auto;background:var(--card-bg);padding:2.5rem;border-radius:16px;border:1px solid rgba(0,0,0,.04)}
+.contact-card p{color:var(--gray);margin:.5rem 0}
+.coverage{background:var(--bg-color);text-align:center}
+.coverage p{max-width:720px;margin:0 auto;color:var(--gray);font-size:1.05rem}
+footer{padding:2rem;text-align:center;background:var(--white);color:var(--gray);font-size:.9rem}
+@media(max-width:640px){header{padding:.8rem 1rem}.nav-links{gap:1rem;font-size:.9rem}.book-now-btn{padding:.5rem 1rem;font-size:.9rem}.stats{grid-template-columns:1fr;gap:1.5rem}section{padding:3.5rem 1.25rem}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">415DogWalker</div>
+<nav>
+<ul class="nav-links">
+<li><a href="#services">Services</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#contact" class="book-now-btn">Book Now</a></li>
+</ul>
+</nav>
+</header>
+<section class="hero" id="top">
+<h1>Your Dog's Favorite Part of the Day</h1>
+<p>Professional dog walking and pet care services in San Francisco. Whether it's a quick walk or overnight stays, your pup gets all the love and attention they deserve.</p>
+</section>
+<div class="stats">
+<div><div class="stat-number">500+</div><div class="stat-label">Walks Completed</div></div>
+<div><div class="stat-number">50+</div><div class="stat-label">Happy Dogs</div></div>
+<div><div class="stat-number">415</div><div class="stat-label">Area Code</div></div>
+</div>
+<section class="services" id="services">
+<div class="section-label">What I Offer</div>
+<h2 class="section-title">Services for Every Need</h2>
+<p class="section-subtitle">From quick walks to full-day care, I have your pup covered.</p>
+<div class="services-grid">
+<div class="service-item">
+<div class="service-emoji">🚶</div>
+<div class="service-name">30 Minute Walk</div>
+<div class="service-price">$20</div>
+<div class="service-desc">Perfect for a quick potty break and stretch. Your dog gets focused attention and a refreshing walk around your neighborhood.</div>
+</div>
+<div class="service-item">
+<div class="service-emoji">🏃</div>
+<div class="service-name">Full Hour Walk</div>
+<div class="service-price">$35</div>
+<div class="service-desc">A full hour of exercise, exploration, and adventure. Ideal for high-energy breeds who need to burn off steam.</div>
+</div>
+<div class="service-item">
+<div class="service-emoji">🏠</div>
+<div class="service-name">Dog Boarding</div>
+<div class="service-price">$75 <span class="service-unit">/ night</span></div>
+<div class="service-desc">Your dog stays at my place and gets all the comforts of home plus round-the-clock companionship. Includes walks and playtime.</div>
+</div>
+<div class="service-item">
+<div class="service-emoji">🛋️</div>
+<div class="service-name">Dog Sitting</div>
+<div class="service-price">$85 <span class="service-unit">/ day</span></div>
+<div class="service-desc">I stay at your place and care for your dog in their familiar environment. Perfect for anxious pups or when you need daytime coverage.</div>
+</div>
+</div>
+</section>
+<section class="pricing" id="pricing">
+<div class="section-label">Transparent Pricing</div>
+<h2 class="section-title">Simple, Fair Rates</h2>
+<p class="section-subtitle">No hidden fees. Just honest pricing for quality care.</p>
+<div class="pricing-grid">
+<div class="pricing-card">
+<div class="pricing-tag">Walking</div>
+<div class="pricing-name">30 Min Walk</div>
+<div class="pricing-amount">$20</div>
+<div class="pricing-duration">30 minutes</div>
+<div class="pricing-note">Quick, focused walk for bathroom breaks and fresh air</div>
+</div>
+<div class="pricing-card">
+<div class="pricing-tag">Walking</div>
+<div class="pricing-name">Full Hour</div>
+<div class="pricing-amount">$35</div>
+<div class="pricing-duration">60 minutes</div>
+<div class="pricing-note">Extended adventure for high-energy pups</div>
+</div>
+<div class="pricing-card">
+<div class="pricing-tag">Overnight</div>
+<div class="pricing-name">Dog Boarding</div>
+<div class="pricing-amount">$75</div>
+<div class="pricing-duration">Per night</div>
+<div class="pricing-note">Your dog stays with me — includes walks &amp; playtime</div>
+</div>
+<div class="pricing-card">
+<div class="pricing-tag">Daytime</div>
+<div class="pricing-name">Dog Sitting</div>
+<div class="pricing-amount">$85</div>
+<div class="pricing-duration">Per day</div>
+<div class="pricing-note">I stay at your place — ideal for anxious dogs</div>
+</div>
+</div>
+</section>
+<section class="about" id="about">
+<div class="section-label">San Francisco's Trusted Pet Care</div>
+<h2 class="section-title">A Local Who Treats Every Pup Like Their Own</h2>
+<img src="photos/harley-zoomies.jpg" alt="Harley, the assistant's namesake — a happy pup mid-zoomies on the dog park turf" class="about-photo">
+<div class="about-content">
+<p>I'm George Tinoco, and I treat every dog like my own. Whether we're exploring the parks of the Richmond, hitting the beaches of Ocean Beach, or just enjoying a leisurely walk through your neighborhood, your pup is in good hands.</p>
+<p>Based in the heart of the 415, I provide reliable, loving pet care that fits your lifestyle. From daily walks to overnight boarding, your dog gets the exercise, attention, and adventure they deserve.</p>
+</div>
+</section>
+<section class="gallery-section" id="gallery">
+<div class="section-label">The Pack</div>
+<h2 class="section-title">Walking SF, One Pup at a Time</h2>
+<p class="section-subtitle">A glimpse of the dogs I walk and the neighborhoods we explore across the 415.</p>
+<div class="gallery-grid" id="gallery-grid">
+<a href="photos/harley-zoomies.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/harley-zoomies.jpg" alt="Harley mid-zoomies" loading="lazy"></a>
+<a href="photos/harley-portrait.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/harley-portrait.jpg" alt="Harley big goofy smile" loading="lazy"></a>
+<a href="photos/pack-crosswalk.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pack-crosswalk.jpg" alt="Pack of four across the crosswalk" loading="lazy"></a>
+<a href="photos/pack-crosswalk-2.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pack-crosswalk-2.jpg" alt="Pack of four, second angle" loading="lazy"></a>
+<a href="photos/doberman-sidewalk.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/doberman-sidewalk.jpg" alt="Doberman on a sunlit sidewalk" loading="lazy"></a>
+<a href="photos/cattle-dog-stoop.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/cattle-dog-stoop.jpg" alt="Cattle dog mix on a classic SF stoop" loading="lazy"></a>
+<a href="photos/pack-five-turf.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pack-five-turf.jpg" alt="Pack of five on the dog park turf" loading="lazy"></a>
+<a href="photos/pitbull-smile.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pitbull-smile.jpg" alt="Pit bull smiling up at the camera" loading="lazy"></a>
+<a href="photos/pitbull-walk.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pitbull-walk.jpg" alt="Pit bull mid-walk" loading="lazy"></a>
+<a href="photos/cocker-bench.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/cocker-bench.jpg" alt="Cocker spaniel on the bench" loading="lazy"></a>
+<a href="photos/dogpark-frenchie.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/dogpark-frenchie.jpg" alt="French bulldog, cocker, golden doodle playdate" loading="lazy"></a>
+<a href="photos/dogpark-corgi.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/dogpark-corgi.jpg" alt="Corgi mid-stride, golden doodle, pit bull" loading="lazy"></a>
+<a href="photos/fluffy-twins.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/fluffy-twins.jpg" alt="Two small fluffy pups side by side" loading="lazy"></a>
+<a href="photos/pitbull-back.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pitbull-back.jpg" alt="Pit bull walking ahead on a leash" loading="lazy"></a>
+<a href="photos/terrier-bench.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/terrier-bench.jpg" alt="Small terrier mix portrait" loading="lazy"></a>
+<a href="photos/pitbull-grass.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pitbull-grass.jpg" alt="Tan pit bull sitting on the grass" loading="lazy"></a>
+<a href="photos/pitbull-puppy.jpg" data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener"><img src="photos/pitbull-puppy.jpg" alt="Pit bull puppy on the bench" loading="lazy"></a>
+</div>
+</section>
 <section class="contact" id="contact">
 <div class="section-label">Get In Touch</div>
 <h2 class="section-title">Let's Chat</h2>
