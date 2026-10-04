@@ -70,23 +70,17 @@ footer{padding:2rem;text-align:center;background:var(--white);color:var(--gray);
 .header-actions{display:flex;align-items:center;gap:.5rem}
 .theme-toggle{background:transparent;border:1px solid rgba(0,0,0,.12);border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:1.05rem;display:flex;align-items:center;justify-content:center;transition:transform .25s,background .2s,border-color .2s;color:var(--dark);flex-shrink:0}
 .theme-toggle:hover{transform:rotate(20deg);background:rgba(0,0,0,.04)}
-.nav-toggle{display:none;background:transparent;border:none;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;flex-shrink:0}
-.nav-toggle span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:transform .3s,opacity .3s}
-.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mobile-cta{display:none}
 
 @media(max-width:768px){
-.nav-toggle{display:flex}
-header{padding:.75rem 1rem}
-.header-actions{gap:.25rem}
-header nav{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg-color);transform:translateY(-100%);transition:transform .3s ease;padding:5.5rem 1.5rem 6rem;overflow-y:auto;z-index:999;visibility:hidden;display:flex;flex-direction:column;justify-content:flex-start}
-header nav.open{transform:translateY(0);visibility:visible}
-.nav-links{flex-direction:column;gap:0;align-items:stretch;width:100%}
-.nav-links li{width:100%;border-bottom:1px solid rgba(0,0,0,.08)}
-.nav-links a{display:block;padding:1rem .5rem;min-height:48px;font-size:1.15rem}
-.nav-links .book-now-btn{margin-top:1.25rem;text-align:center;padding:1rem;font-size:1.1rem}
+header{padding:.5rem 1rem}
+.logo{font-size:1.1rem;flex-shrink:0}
+.header-actions{gap:.4rem;min-width:0;flex:1;justify-content:flex-end}
+.nav-links{gap:.3rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links li{flex-shrink:0}
+.nav-links a{font-size:.75rem;padding:.25rem .15rem;white-space:nowrap}
+.nav-links .book-now-btn{padding:.35rem .65rem;font-size:.75rem;white-space:nowrap}
 section{padding:3.5rem 1.25rem}
 .hero{padding:6.5rem 1.25rem 3rem;min-height:60vh}
 .hero h1{font-size:clamp(1.9rem,7.5vw,2.6rem);line-height:1.2}
@@ -113,9 +107,6 @@ footer{padding-bottom:6rem}
 <div class="logo">415DogWalker</div>
 <div class="header-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
-<span></span><span></span><span></span>
-</button>
 <nav id="primary-nav">
 <ul class="nav-links">
 <li><a href="#services">Services</a></li>
@@ -257,8 +248,8 @@ footer{padding-bottom:6rem}
 <p class="section-subtitle">Ready to book or have questions? Reach out anytime.</p>
 <div class="contact-card">
 <p>📍 San Francisco, CA — serving all 415 neighborhoods</p>
-<p>📞 Text or call anytime</p>
-<p>✉️ Or message me on Telegram</p>
+<p>📞 <a href="tel:+14153240599" style="color:var(--mint-dark);font-weight:600">(415) 324-0599</a> — text or call anytime</p>
+<p>✉️ <a href="mailto:the415dogwalker@gmail.com" style="color:var(--mint-dark);font-weight:600">the415dogwalker@gmail.com</a></p>
 </div>
 </section>
 <section class="coverage" id="coverage">
@@ -304,33 +295,6 @@ lightbox.init();
   });
 })();
 
-(function(){
-  // Mobile nav toggle
-  var btn = document.getElementById('nav-toggle');
-  var nav = document.getElementById('primary-nav');
-  if (!btn || !nav) return;
-  btn.addEventListener('click', function(){
-    var open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  // Close drawer when a link is tapped
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-      document.body.style.overflow = '';
-    });
-  });
-  // Close on Escape
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-      document.body.style.overflow = '';
-    }
-  });
-})();
 </script>
 </body>
 </html>
