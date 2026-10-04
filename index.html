@@ -81,8 +81,8 @@ footer{padding:2rem;text-align:center;background:var(--white);color:var(--gray);
 .nav-toggle{display:flex}
 header{padding:.75rem 1rem}
 .header-actions{gap:.25rem}
-header>nav{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg-color);transform:translateY(-100%);transition:transform .3s ease;padding:5.5rem 1.5rem 6rem;overflow-y:auto;z-index:999;visibility:hidden}
-header>nav.open{transform:translateY(0);visibility:visible}
+header nav{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg-color);transform:translateY(-100%);transition:transform .3s ease;padding:5.5rem 1.5rem 6rem;overflow-y:auto;z-index:999;visibility:hidden;display:flex;flex-direction:column;justify-content:flex-start}
+header nav.open{transform:translateY(0);visibility:visible}
 .nav-links{flex-direction:column;gap:0;align-items:stretch;width:100%}
 .nav-links li{width:100%;border-bottom:1px solid rgba(0,0,0,.08)}
 .nav-links a{display:block;padding:1rem .5rem;min-height:48px;font-size:1.15rem}
