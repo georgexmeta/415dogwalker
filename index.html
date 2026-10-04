@@ -80,14 +80,14 @@ footer{padding:2rem;text-align:center;background:var(--white);color:var(--gray);
 .mobile-cta{display:none}
 
 @media(max-width:768px){
-header{padding:.5rem 1rem}
-.logo{font-size:1.1rem;flex-shrink:0}
-.header-actions{gap:.4rem;min-width:0;flex:1;justify-content:flex-end}
-.nav-links{gap:.3rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
-.nav-links::-webkit-scrollbar{display:none}
+header{padding:.5rem 1rem;gap:1rem}
+.logo{font-size:1.1rem;flex-shrink:0;white-space:nowrap}
+.header-actions{gap:.6rem;min-width:0;flex:1;justify-content:flex-end;align-items:center}
+.nav-links{gap:.75rem;flex-wrap:nowrap;align-items:center}
 .nav-links li{flex-shrink:0}
-.nav-links a{font-size:.75rem;padding:.25rem .15rem;white-space:nowrap}
-.nav-links .book-now-btn{padding:.35rem .65rem;font-size:.75rem;white-space:nowrap}
+.nav-links a{font-size:.9rem;padding:.35rem .2rem;white-space:nowrap}
+.nav-links .book-now-btn{padding:.45rem .8rem;font-size:.9rem;white-space:nowrap}
+.theme-toggle{font-size:1rem;padding:.25rem .35rem;flex-shrink:0}
 section{padding:3.5rem 1.25rem}
 .hero{padding:6.5rem 1.25rem 3rem;min-height:60vh}
 .hero h1{font-size:clamp(1.9rem,7.5vw,2.6rem);line-height:1.2}
@@ -113,17 +113,17 @@ footer{padding-bottom:6rem}
 <header>
 <div class="logo">415DogWalker</div>
 <div class="header-actions">
-<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
 <nav id="primary-nav">
 <ul class="nav-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#pricing">Pricing</a></li>
+
+
 <li><a href="#about">About</a></li>
 <li><a href="#gallery">Gallery</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="#contact" class="book-now-btn">Book Now</a></li>
 </ul>
 </nav>
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
 </div>
 </header>
 <section class="hero" id="top">
