@@ -131,6 +131,22 @@ section{padding:3.5rem 1.25rem}
 .contact-actions .btn{width:100%;font-size:1.05rem;min-height:56px}
 .hoods{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;max-width:620px;margin:2rem auto 0;list-style:none}
 .hoods li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.35rem .85rem;font-size:.88rem}
+/* Client & Dog Introduction */
+.intro-form{max-width:720px;margin:0 auto;display:grid;gap:1rem}
+.intro-form label,.intro-form .field{display:flex;flex-direction:column;gap:.4rem}
+.intro-form label>span,.intro-form legend{font-weight:600;font-size:.95rem;color:var(--text)}
+.intro-form input[type="text"],.intro-form input[type="tel"],.intro-form input[type="email"]{padding:.65rem .8rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);font:inherit;color:var(--text);min-height:48px}
+.intro-form input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.intro-form fieldset{border:1px solid var(--line);border-radius:var(--radius);padding:1rem;margin:0;background:var(--card)}
+.intro-form legend{padding:0 .35rem}
+.intro-form .choices{display:grid;gap:.5rem;margin-top:.35rem}
+.intro-form .choice{display:flex;align-items:center;gap:.6rem;padding:.55rem .8rem;border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;background:var(--surface)}
+.intro-form .choice:hover{border-color:var(--accent)}
+.intro-form input[type="radio"],.intro-form input[type="checkbox"]{accent-color:var(--accent);width:1.2em;height:1.2em;margin:0;cursor:pointer}
+.intro-form .full{grid-column:1/-1}
+.intro-form .submit-row .btn{width:100%;font-size:1.05rem;min-height:52px}
+@media (min-width:640px){.intro-form{grid-template-columns:1fr 1fr;gap:1rem 1.25rem}}
+
 
 footer{padding:2rem 1.25rem calc(2rem + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:.88rem;background:var(--surface)}
 
@@ -239,6 +255,79 @@ footer{padding:2rem 1.25rem calc(2rem + env(safe-area-inset-bottom));text-align:
 <a href="photos/pack-new-05.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-05.jpg" width="600" height="800" alt="Three pups at Pier 14 with the Bay Bridge in the background" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-07.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-07.jpg" width="600" height="800" alt="Two pups walking the coastal path at Ocean Beach" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-14.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-14.jpg" width="600" height="800" alt="Tan pup with a purple collar, classic SF sidewalk soul" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-09.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-09.jpg" width="600" height="800" alt="Three pups waiting at an SF crosswalk" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-01.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-01.jpg" width="600" height="800" alt="Brindle pup sitting alert on the sidewalk" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-08.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-08.jpg" width="600" height="800" alt="Walker POV with the green bag on the coastal path" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-12.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-12.jpg" width="600" height="800" alt="Two doodles on a SF waterfront promenade" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-13.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-13.jpg" width="600" height="800" alt="Four pups from the walkers POV on a city street" loading="lazy" decoding="async"></a>  <a href="photos/pack-new-04.jpg" data-pswp-width="600" data-pswp-height="800" target="_blank" rel="noopener"><img src="photos/pack-new-04.jpg" width="600" height="800" alt="Brindle pup walking past cypress trees on a SF street" loading="lazy" decoding="async"></a>
 </div>
   </section>
+
+<section id="intro" class="alt">
+  <div class="section-head">
+    <span class="eyebrow">Client &amp; Dog Introduction</span>
+    <h2>Tell Me About You &amp; Your Pup</h2>
+    <p>A few quick questions so I can give your dog the best care. I&apos;ll get back to you the same day.</p>
+  </div>
+  <form class="intro-form" action="https://formsubmit.co/the415dogwalker@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New Client &amp; Dog Introduction — 415dogwalker.com">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <label class="full">
+      <span>Your name</span>
+      <input type="text" name="name" required autocomplete="name">
+    </label>
+
+    <label>
+      <span>Phone</span>
+      <input type="tel" name="phone" required autocomplete="tel">
+    </label>
+
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required autocomplete="email">
+    </label>
+
+    <label class="full">
+      <span>Dog&apos;s name</span>
+      <input type="text" name="dog_name" required>
+    </label>
+
+    <label>
+      <span>Breed</span>
+      <input type="text" name="breed" required placeholder="e.g. Golden Retriever mix">
+    </label>
+
+    <label>
+      <span>Age</span>
+      <input type="text" name="age" required placeholder="e.g. 3 years">
+    </label>
+
+    <fieldset class="full">
+      <legend>Gets along with other dogs?</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="gets_along" value="Yes" required> Yes</label>
+        <label class="choice"><input type="radio" name="gets_along" value="No"> No</label>
+        <label class="choice"><input type="radio" name="gets_along" value="Sometimes"> Sometimes</label>
+        <label class="choice"><input type="radio" name="gets_along" value="Circumstantial"> Circumstantial</label>
+      </div>
+    </fieldset>
+
+    <label class="full">
+      <span>Describe your dog in 3 words</span>
+      <input type="text" name="three_words" required placeholder="e.g. shy, playful, couch-potato">
+    </label>
+
+    <fieldset class="full">
+      <legend>What services are you looking for?</legend>
+      <div class="choices">
+        <label class="choice"><input type="checkbox" name="service" value="30-min walk"> 30-minute walk ($30)</label>
+        <label class="choice"><input type="checkbox" name="service" value="Hour walk"> Hour walk ($40)</label>
+        <label class="choice"><input type="checkbox" name="service" value="Boarding"> Boarding (meet &amp; greet first)</label>
+        <label class="choice"><input type="checkbox" name="service" value="Sitting"> Sitting ($85/day)</label>
+      </div>
+    </fieldset>
+
+    <div class="submit-row full">
+      <button type="submit" class="btn btn-primary">Begin Adventure →</button>
+    </div>
+  </form>
+</section>
 
 <section id="contact">
   <div class="section-head">
