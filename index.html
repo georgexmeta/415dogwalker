@@ -315,12 +315,12 @@ var PHONE = '+14153240599';
       .observe(document.querySelector('.contact-actions'));
   }
 
-  // Gallery expand
+  // Gallery expand (only if the button exists)
   var more = document.getElementById('more-photos'), grid = document.getElementById('gallery-grid');
-  more.addEventListener('click', function(){
+  if (more) more.addEventListener('click', function(){
     var open = grid.classList.toggle('expanded');
     more.setAttribute('aria-expanded', open);
-    more.textContent = open ? 'Show fewer' : 'See all 33 photos';
+    more.textContent = open ? 'Show fewer' : 'See all photos';
     if (!open) grid.scrollIntoView();
   });
 })();
