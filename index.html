@@ -30,6 +30,7 @@
   "image": "https://415dogwalker.com/photos/gallery-02.jpg",
   "telephone": "+1-415-324-0599",
   "email": "the415dogwalker@gmail.com",
+    "sameAs": ["https://wagwalking.com/walker-profile/GEORGE14964"],
   "priceRange": "$20–$85",
   "areaServed": "San Francisco, CA",
   "address": {"@type": "PostalAddress", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US"}
@@ -102,7 +103,7 @@ section{padding:3.5rem 1.25rem}
 .rates{display:grid;gap:.75rem;max-width:720px;margin:0 auto}
 .rate{display:grid;grid-template-columns:auto 1fr auto;gap:.25rem 1rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.1rem}
 .rate-emoji{font-size:1.8rem;grid-row:span 2}
-.rate-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;line-height:1.25}
+.rate-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;line-height:1.25;grid-row:span 2;align-self:center}
 .rate-price{font-weight:700;font-size:1.35rem;color:var(--accent);text-align:right;grid-row:span 2;white-space:nowrap}
 .rate-price small{display:block;font-size:.75rem;font-weight:500;color:var(--muted)}
 .rate-desc{font-size:.92rem;color:var(--muted);line-height:1.45}
@@ -165,7 +166,7 @@ footer{padding:2rem 1.25rem calc(2rem + env(safe-area-inset-bottom));text-align:
   .gallery a{border-radius:12px}
   .gallery a:hover img{transform:scale(1.04)}
   .gallery img{transition:transform .35s}
-  .contact-actions{grid-template-columns:repeat(3,1fr);max-width:720px}
+  .contact-actions{grid-template-columns:repeat(2,1fr);max-width:560px}
 }
 @media (min-width:1024px){
   .rates{grid-template-columns:1fr 1fr;max-width:1000px}
@@ -207,6 +208,23 @@ footer{padding:2rem 1.25rem calc(2rem + env(safe-area-inset-bottom));text-align:
     <div class="stat"><b>All</b><span>SF neighborhoods</span></div>
   </div>
 </section>
+
+
+
+<section class="alt" id="rates">
+  <div class="section-head">
+    <span class="eyebrow">Services &amp; Rates</span>
+    <h2>Simple, Fair Pricing</h2>
+  </div>
+  <div class="rates">
+    <div class="rate"><div class="rate-emoji">🚶</div><div class="rate-name">30-Minute Walk</div><div class="rate-price">$20</div></div>
+    <div class="rate"><div class="rate-emoji">🏃</div><div class="rate-name">Full-Hour Walk</div><div class="rate-price">$35</div></div>
+    <div class="rate"><div class="rate-emoji">🏠</div><div class="rate-name">Dog Boarding</div><div class="rate-price">$75<small>per night</small></div></div>
+    <div class="rate"><div class="rate-emoji">🛋️</div><div class="rate-name">Dog Sitting</div><div class="rate-price">$85<small>per day</small></div></div>
+  </div>
+  <p class="fine">Not sure what you need? <a href="#contact">Text me</a> and we can figure it out.</p>
+</section>
+
 
 
 
@@ -253,20 +271,6 @@ footer{padding:2rem 1.25rem calc(2rem + env(safe-area-inset-bottom));text-align:
   <ul class="hoods" aria-label="Neighborhoods served">
     <li>Richmond</li><li>Sunset</li><li>Marina</li><li>Noe Valley</li><li>Mission</li><li>Castro</li><li>+ all of SF</li>
   </ul>
-</section>
-
-<section class="alt" id="rates">
-  <div class="section-head">
-    <span class="eyebrow">Services &amp; Rates</span>
-    <h2>Simple, Fair Pricing</h2>
-  </div>
-  <div class="rates">
-    <div class="rate"><div class="rate-emoji">🚶</div><div class="rate-name">30-Minute Walk</div><div class="rate-price">$20</div></div>
-    <div class="rate"><div class="rate-emoji">🏃</div><div class="rate-name">Full-Hour Walk</div><div class="rate-price">$35</div></div>
-    <div class="rate"><div class="rate-emoji">🏠</div><div class="rate-name">Dog Boarding</div><div class="rate-price">$75<small>per night</small></div></div>
-    <div class="rate"><div class="rate-emoji">🛋️</div><div class="rate-name">Dog Sitting</div><div class="rate-price">$85<small>per day</small></div></div>
-  </div>
-  <p class="fine">Not sure what you need? <a href="#contact">Text me</a> and we can figure it out.</p>
 </section>
 
 </main>
