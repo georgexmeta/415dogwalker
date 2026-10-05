@@ -61,7 +61,7 @@ h1,h2,.serif{font-family:'Playfair Display',Georgia,serif}
 header{position:fixed;inset:0 0 auto 0;height:calc(var(--header-h) + env(safe-area-inset-top));padding:env(safe-area-inset-top) max(1rem,env(safe-area-inset-right)) 0 max(1rem,env(safe-area-inset-left));z-index:1000;display:flex;justify-content:space-between;align-items:center}
 /* backdrop on a pseudo-element: backdrop-filter on header itself would trap the fixed mobile menu inside the header */
 header::before{content:"";position:absolute;inset:0;background:var(--header-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:-2}
-.logo{display:inline-flex;align-items:center;text-decoration:none;color:inherit;font-weight:700;font-size:1.35rem}.logo img{height:44px;width:auto;display:block}
+.logo{display:inline-flex;align-items:center;text-decoration:none;color:inherit;font-weight:700;font-size:1.35rem}.logo img{height:44px;width:auto;display:block}.logo .logo-dark{display:none}[data-theme="dark"] .logo .logo-light{display:none}[data-theme="dark"] .logo .logo-dark{display:inline-block}
 .header-actions{display:flex;align-items:center;gap:.25rem}
 .icon-btn{background:transparent;border:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:1.1rem}
 .icon-btn:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
@@ -193,7 +193,7 @@ footer{padding:2rem 1.25rem calc(2rem + env(safe-area-inset-bottom));text-align:
 <body>
 
 <header>
-  <a href="#top" class="logo" aria-label="415 Dog Walker — Home"><img src="photos/logo.png" alt="415 Dog Walker San Francisco" height="44" width="44"></a>
+  <a href="#top" class="logo" aria-label="415 Dog Walker — Home"><img class="logo-light" src="photos/logo-light.png" alt="415 Dog Walker San Francisco" height="44" width="44"><img class="logo-dark" src="photos/logo-dark.png" alt="415 Dog Walker San Francisco" height="44" width="44"></a>
   <div class="header-actions">
     <nav id="primary-nav" aria-label="Main">
       <ul class="nav-links">
